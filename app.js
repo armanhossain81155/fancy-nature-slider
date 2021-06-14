@@ -146,7 +146,7 @@ const displayImg = () => {
   document.querySelector('.main').style.display = 'none';
   clearInterval(timer);
   getImages(search.value);
-  sliders.length = 0;
+  sliders.length = 1;
   
   
 };
@@ -155,7 +155,7 @@ const displayImg = () => {
 search.addEventListener('keyup', function (e) {
   if (e.keyCode === 13) {
       displayImg();
-      
+      toggleSpinner();
       
   }
   
