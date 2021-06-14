@@ -126,6 +126,7 @@ searchBtn.addEventListener('click', function () {
   
   sliders.length = 0;
   toggleSpinner();
+  search.value = '';
   
 })
 
@@ -142,11 +143,12 @@ sliderBtn.addEventListener('click', function () {
   }
 });
 const search = document.getElementById('search');
+   
 const displayImg = () => {
   document.querySelector('.main').style.display = 'none';
   clearInterval(timer);
   getImages(search.value);
-  sliders.length = 1;
+  sliders.length = 0;
   
   
 };
@@ -155,8 +157,8 @@ const displayImg = () => {
 search.addEventListener('keyup', function (e) {
   if (e.keyCode === 13) {
       displayImg();
+      search.value = '';
       toggleSpinner();
-      
   }
   
 });
